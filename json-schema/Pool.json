@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/json-schema/Pool.json",
+  "title": "Pool",
+  "description": "Detailed pool object with full metadata, fees, and earning data",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "example": "vaDAI"
+    },
+    "address": {
+      "type": "string",
+      "example": "0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d"
+    },
+    "decimals": {
+      "type": "integer",
+      "example": 18
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["alpha", "beta", "prod", "retired"]
+    },
+    "asset": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "example": "DAI"
+        },
+        "address": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number",
+          "example": 1.0
+        },
+        "decimals": {
+          "type": "integer",
+          "example": 18
+        }
+      }
+    },
+    "riskLevel": {
+      "type": "integer",
+      "description": "Risk score (1 = lowest, 5 = highest)",
+      "minimum": 1,
+      "maximum": 5,
+      "example": 2
+    },
+    "holderCount": {
+      "type": "integer",
+      "example": 1450
+    },
+    "interestFee": {
+      "type": "number",
+      "description": "Performance fee percentage",
+      "example": 2.0
+    },
+    "withdrawalFee": {
+      "type": "number",
+      "description": "Withdrawal fee percentage",
+      "example": 0.0
+    },
+    "lockPeriod": {
+      "type": "integer",
+      "description": "Token lock period in seconds",
+      "example": 0
+    },
+    "tokenValue": {
+      "type": "number",
+      "description": "Current value per pool token",
+      "example": 1.0421
+    },
+    "totalSupply": {
+      "type": "string",
+      "description": "Total pool token supply (string to preserve precision)",
+      "example": "5000000000000000000000000"
+    },
+    "earningRates": {
+      "type": "object",
+      "properties": {
+        "day1": { "type": "number" },
+        "day2": { "type": "number" },
+        "day7": { "type": "number" },
+        "day30": { "type": "number" }
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "vesper": "https://api.vesper.finance/vocab#",
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+
+    "Pool": "vesper:Pool",
+    "PoolDashboard": "vesper:PoolDashboard",
+    "DataPoint": "vesper:DataPoint",
+    "ValueLocked": "vesper:ValueLocked",
+    "VspStats": "vesper:VspStats",
+    "LoanRate": "vesper:LoanRate",
+    "Strategy": "vesper:Strategy",
+    "PoolRewards": "vesper:PoolRewards",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "address": {
+      "@id": "vesper:contractAddress",
+      "@type": "xsd:string"
+    },
+    "tokens": {
+      "@id": "vesper:tokens",
+      "@container": "@list"
+    },
+    "holderCount": {
+      "@id": "vesper:holderCount",
+      "@type": "xsd:integer"
+    },
+    "strategies": {
+      "@id": "vesper:strategies",
+      "@container": "@set"
+    },
+    "poolRewards": "vesper:poolRewards",
+    "status": "vesper:status",
+    "stage": "vesper:stage",
+    "decimals": {
+      "@id": "vesper:decimals",
+      "@type": "xsd:integer"
+    },
+    "asset": "vesper:asset",
+    "symbol": "schema:identifier",
+    "price": {
+      "@id": "schema:price",
+      "@type": "xsd:decimal"
+    },
+    "riskLevel": {
+      "@id": "vesper:riskLevel",
+      "@type": "xsd:integer"
+    },
+    "interestFee": {
+      "@id": "vesper:interestFee",
+      "@type": "xsd:decimal"
+    },
+    "withdrawalFee": {
+      "@id": "vesper:withdrawalFee",
+      "@type": "xsd:decimal"
+    },
+    "lockPeriod": {
+      "@id": "vesper:lockPeriod",
+      "@type": "xsd:integer"
+    },
+    "tokenValue": {
+      "@id": "vesper:tokenValue",
+      "@type": "xsd:decimal"
+    },
+    "totalSupply": {
+      "@id": "vesper:totalSupply",
+      "@type": "xsd:string"
+    },
+    "earningRates": "vesper:earningRates",
+    "day1": { "@id": "vesper:earningRate1d", "@type": "xsd:decimal" },
+    "day2": { "@id": "vesper:earningRate2d", "@type": "xsd:decimal" },
+    "day7": { "@id": "vesper:earningRate7d", "@type": "xsd:decimal" },
+    "day30": { "@id": "vesper:earningRate30d", "@type": "xsd:decimal" },
+
+    "apy": {
+      "@id": "vesper:apy",
+      "@type": "xsd:decimal"
+    },
+    "apr": {
+      "@id": "vesper:apr",
+      "@type": "xsd:decimal"
+    },
+    "lendRates": {
+      "@id": "vesper:lendRates",
+      "@container": "@set"
+    },
+
+    "blockNumber": {
+      "@id": "vesper:blockNumber",
+      "@type": "xsd:integer"
+    },
+    "timestamp": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:integer"
+    },
+    "interest": {
+      "@id": "vesper:interest",
+      "@type": "xsd:string"
+    },
+    "poolSupply": {
+      "@id": "vesper:poolSupply",
+      "@type": "xsd:string"
+    },
+    "totalValue": {
+      "@id": "vesper:totalValue",
+      "@type": "xsd:string"
+    },
+    "values": {
+      "@id": "vesper:lockedValues",
+      "@type": "@json"
+    },
+
+    "vspPrice": {
+      "@id": "vesper:vspPrice",
+      "@type": "xsd:decimal"
+    },
+    "priceChange1h": {
+      "@id": "vesper:priceChange1h",
+      "@type": "xsd:decimal"
+    },
+    "circulatingSupply": {
+      "@id": "vesper:circulatingSupply",
+      "@type": "xsd:string"
+    },
+    "marketCap": {
+      "@id": "vesper:marketCap",
+      "@type": "xsd:decimal"
+    },
+    "distributionTotal": {
+      "@id": "vesper:distributionTotal",
+      "@type": "xsd:string"
+    },
+    "distribution30d": {
+      "@id": "vesper:distribution30d",
+      "@type": "xsd:string"
+    },
+
+    "makerVault": "vesper:makerVault",
+    "url": "schema:url",
+    "email": "schema:email"
+  }
+}

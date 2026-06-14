@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/json-schema/VspStats.json",
+  "title": "VspStats",
+  "description": "VSP token market statistics",
+  "type": "object",
+  "properties": {
+    "price": {
+      "type": "number",
+      "description": "Current VSP token price in USD",
+      "example": 2.41
+    },
+    "priceChange1h": {
+      "type": "number",
+      "description": "Price change over the past 1 hour as a percentage",
+      "example": -0.32
+    },
+    "totalSupply": {
+      "type": "string",
+      "description": "Total VSP token supply",
+      "example": "10000000000000000000000000"
+    },
+    "circulatingSupply": {
+      "type": "string",
+      "description": "Circulating VSP supply"
+    },
+    "marketCap": {
+      "type": "number",
+      "description": "Market capitalization in USD",
+      "example": 24100000
+    },
+    "distributionTotal": {
+      "type": "string",
+      "description": "Total VSP distributed to date"
+    },
+    "distribution30d": {
+      "type": "string",
+      "description": "VSP distributed in the past 30 days"
+    }
+  }
+}

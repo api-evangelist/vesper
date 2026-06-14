@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/json-schema/LoanRatesResponse.json",
+  "title": "LoanRatesResponse",
+  "description": "Response object containing array of lending rates with APY, APR, and token symbols",
+  "type": "object",
+  "properties": {
+    "lendRates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "apy": {
+            "type": "number",
+            "description": "Annual percentage yield (24-hour)",
+            "example": 4.72
+          },
+          "apr": {
+            "type": "number",
+            "description": "Annual percentage rate (24-hour)",
+            "example": 4.62
+          },
+          "symbol": {
+            "type": "string",
+            "description": "Token symbol for the pool asset",
+            "example": "DAI"
+          }
+        }
+      }
+    }
+  }
+}

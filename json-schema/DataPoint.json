@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/json-schema/DataPoint.json",
+  "title": "DataPoint",
+  "description": "Historical data point snapshot for a pool",
+  "type": "object",
+  "properties": {
+    "blockNumber": {
+      "type": "integer",
+      "description": "Ethereum block number of the snapshot",
+      "example": 17500000
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Unix timestamp of the snapshot",
+      "example": 1686700000
+    },
+    "interest": {
+      "type": "string",
+      "description": "Accrued interest value"
+    },
+    "interestFee": {
+      "type": "string",
+      "description": "Interest fee taken at this snapshot"
+    },
+    "poolSupply": {
+      "type": "string",
+      "description": "Pool token total supply at snapshot"
+    },
+    "totalValue": {
+      "type": "string",
+      "description": "Total asset value in the pool at snapshot"
+    }
+  }
+}

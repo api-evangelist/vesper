@@ -1,0 +1,24 @@
+{
+  "lendRates": [
+    {
+      "apy": 4.72,
+      "apr": 4.62,
+      "symbol": "DAI"
+    },
+    {
+      "apy": 3.85,
+      "apr": 3.78,
+      "symbol": "USDC"
+    },
+    {
+      "apy": 2.14,
+      "apr": 2.12,
+      "symbol": "WETH"
+    },
+    {
+      "apy": 5.31,
+      "apr": 5.17,
+      "symbol": "WBTC"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "vaDAI",
+    "address": "0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d",
+    "decimals": 18,
+    "stage": "prod",
+    "asset": {
+      "symbol": "DAI",
+      "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "price": 1.0,
+      "decimals": 18
+    },
+    "riskLevel": 2,
+    "holderCount": 1450,
+    "interestFee": 2.0,
+    "withdrawalFee": 0.0,
+    "lockPeriod": 0,
+    "tokenValue": 1.0421,
+    "totalSupply": "5000000000000000000000000",
+    "earningRates": {
+      "day1": 4.12,
+      "day2": 4.05,
+      "day7": 3.98,
+      "day30": 4.22
+    }
+  },
+  {
+    "name": "vaUSDC",
+    "address": "0xa8b607Aa09B6A2E306F93e74c282Fb13f6A80452",
+    "decimals": 6,
+    "stage": "prod",
+    "asset": {
+      "symbol": "USDC",
+      "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "price": 1.0,
+      "decimals": 6
+    },
+    "riskLevel": 2,
+    "holderCount": 2100,
+    "interestFee": 2.0,
+    "withdrawalFee": 0.0,
+    "lockPeriod": 0,
+    "tokenValue": 1.0318,
+    "totalSupply": "8000000000",
+    "earningRates": {
+      "day1": 3.85,
+      "day2": 3.72,
+      "day7": 3.91,
+      "day30": 3.80
+    }
+  }
+]

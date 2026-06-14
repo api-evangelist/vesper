@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/json-schema/ValueLocked.json",
+  "title": "ValueLocked",
+  "description": "Historical total value locked snapshot",
+  "type": "object",
+  "properties": {
+    "blockNumber": {
+      "type": "integer",
+      "description": "Block number of the snapshot",
+      "example": 17500000
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Unix timestamp",
+      "example": 1686700000
+    },
+    "values": {
+      "type": "object",
+      "description": "Map of pool address to locked value",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}
