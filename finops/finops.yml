@@ -1,0 +1,43 @@
+name: Vesper Finance API FinOps
+description: Vesper Finance REST API is free to access with no usage-based charges.
+  Cost considerations for integrators relate to on-chain transaction fees when
+  interacting with Vesper smart contracts directly, and to infrastructure costs for
+  running data pipelines that consume the public API.
+costs:
+  - name: API Access
+    description: The Vesper Finance REST API (api.vesper.finance) is publicly
+      accessible at no charge. No subscription, API key, or payment is required.
+    amount: 0.00
+    currency: USD
+    unit: request
+  - name: On-Chain Interaction Gas Fees
+    description: Direct interaction with Vesper smart contracts (deposit, withdraw,
+      rebalance, claimVsp) requires Ethereum or EVM-compatible gas fees paid in the
+      native chain token (ETH, MATIC, AVAX). Gas costs vary by network congestion
+      and operation complexity.
+    amount: null
+    currency: ETH
+    unit: transaction
+    notes: Gas fees are network-dependent and not controlled by Vesper Finance.
+      Withdrawal and deposit operations on Ethereum mainnet typically cost between
+      0.005 and 0.05 ETH depending on pool complexity and strategy count.
+  - name: Vesper Protocol Performance Fee
+    description: Vesper pools charge a 2% annual performance fee on deposited
+      principal, taken at rebalance events, capped at 50% of earned yield. This fee
+      is embedded in APY figures and is not a separate API charge.
+    amount: 2.00
+    currency: percent
+    unit: year
+    notes: Fee applies to protocol users, not API consumers. APY data returned by
+      the API already reflects post-fee yields.
+savings:
+  - name: No Authentication Infrastructure
+    description: Since the API requires no keys or OAuth, integrators save on
+      credential management, rotation, and secure storage overhead.
+  - name: Open Source Contracts
+    description: Smart contracts are open source at github.com/vesperfi/vesper-contracts,
+      reducing due diligence costs for integrations.
+  - name: Public Subgraph
+    description: The Vesper subgraph on The Graph provides an alternative free
+      data access layer for historical on-chain data, reducing dependency on the
+      centralized REST API.

@@ -1,0 +1,27 @@
+name: Vesper Finance API Rate Limits
+description: Vesper Finance does not publish explicit rate limiting policies in its
+  public API documentation. The API is open and unauthenticated. Developers should
+  implement reasonable request throttling and caching to avoid overloading the service,
+  particularly for high-frequency data polling use cases.
+rateLimits:
+  - name: Undocumented Public Limits
+    description: No explicit rate limits are documented for the Vesper Finance public
+      REST API. As a best practice, consumers should cache responses and avoid polling
+      at intervals shorter than 60 seconds for time-series endpoints such as
+      /values-locked and /pools/:address/data-points.
+    requests: null
+    unit: null
+    period: null
+    notes: >
+      The API does not require authentication and imposes no formally published
+      rate limits. Responsible API consumers should self-limit to avoid service
+      disruption. For production integrations, consider using the Vesper subgraph
+      via The Graph protocol as an alternative data source with independent
+      infrastructure.
+recommendations:
+  - Implement client-side caching with TTLs of at least 60 seconds for pool data
+  - Use conditional requests or ETags if supported by the server
+  - Spread batch requests over time rather than issuing them simultaneously
+  - Monitor for HTTP 429 or 503 responses as signals of server-side throttling
+  - Consider the Vesper JavaScript library (lib-js) for direct on-chain data when
+    the REST API is unavailable
