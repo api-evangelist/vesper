@@ -10,104 +10,106 @@ created: '2026-06-14'
 modified: '2026-06-14'
 specificationVersion: '0.19'
 tags:
-  - DeFi
-  - Yield Aggregator
-  - Liquidity Pools
-  - APY
-  - Staking
-  - VSP Token
-  - Ethereum
-  - Polygon
-  - Avalanche
-  - Optimism
+- DeFi
+- Yield Aggregator
+- Liquidity Pools
+- APY
+- Staking
+- VSP Token
+- Ethereum
+- Polygon
+- Avalanche
+- Optimism
 apis:
-  - name: Vesper Finance API
-    description: REST API for querying Vesper Finance pool data, APY metrics, VSP
-      token statistics, historical value-locked snapshots, and strategy information
-      across all supported chains.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
-    baseURL: https://api.vesper.finance
-    tags:
-      - DeFi
-      - Yield
-      - Pools
-      - APY
-      - VSP
-    properties:
-      - type: Documentation
-        url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/openapi.yml
-      - type: GitHubRepository
-        url: https://github.com/vesperfi/doc
-      - type: Plans
-        url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/plans/plans.yml
-      - type: RateLimits
-        url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/rate-limits/rate-limits.yml
-      - type: FinOps
-        url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
-    contact:
-      - FN: Vesper Finance
-        url: https://vesper.finance/
-        email: ''
-  - name: Vesper Contracts API Reference
-    description: Smart contract interface reference for Vesper pools, strategies,
-      PoolAccountant, PoolRewards, and related on-chain components enabling direct
-      DeFi integration via Web3.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.vesper.finance/vesper-developers/vesper-contracts-api-reference
-    baseURL: https://api.vesper.finance
-    tags:
-      - Smart Contracts
-      - Web3
-      - ERC20
-      - DeFi
-    properties:
-      - type: Documentation
-        url: https://docs.vesper.finance/vesper-developers/vesper-contracts-api-reference
-      - type: GitHubRepository
-        url: https://github.com/vesperfi/vesper-contracts
-    contact:
-      - FN: Vesper Finance
-        url: https://vesper.finance/
-  - name: Vesper Subgraph API
-    description: GraphQL subgraph for querying Vesper Finance on-chain events,
-      pool history, strategy performance, and token metrics via The Graph protocol.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://github.com/vesperfi/vesper-subgraph
-    baseURL: https://api.thegraph.com/subgraphs/name/vesperfi
-    tags:
-      - GraphQL
-      - Subgraph
-      - The Graph
-      - Historical Data
-    properties:
-      - type: Documentation
-        url: https://github.com/vesperfi/vesper-subgraph
-      - type: GitHubRepository
-        url: https://github.com/vesperfi/vesper-subgraph
-    contact:
-      - FN: Vesper Finance
-        url: https://vesper.finance/
-common:
-  - type: Website
-    url: https://vesper.finance/
+- name: Vesper Finance API
+  description: REST API for querying Vesper Finance pool data, APY metrics, VSP token
+    statistics, historical value-locked snapshots, and strategy information across
+    all supported chains.
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  baseURL: https://api.vesper.finance
+  tags:
+  - DeFi
+  - Yield
+  - Pools
+  - APY
+  - VSP
+  properties:
   - type: Documentation
-    url: https://docs.vesper.finance/
-  - type: GitHubOrganization
-    url: https://github.com/vesperfi
-  - type: JavaScriptLibrary
-    url: https://github.com/vesperfi/lib-js
-  - type: Blog
-    url: https://medium.com/vesperfinance
-  - type: Discord
-    url: https://discord.gg/vesperfinance
-  - type: Twitter
-    url: https://twitter.com/VesperFi
-  - type: PoolMetadata
-    url: https://github.com/vesperfi/metadata
+    url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/vesperfi/doc
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
+  contact:
+  - FN: Vesper Finance
+    url: https://vesper.finance/
+    email: ''
+- name: Vesper Contracts API Reference
+  description: Smart contract interface reference for Vesper pools, strategies, PoolAccountant,
+    PoolRewards, and related on-chain components enabling direct DeFi integration
+    via Web3.
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.vesper.finance/vesper-developers/vesper-contracts-api-reference
+  baseURL: https://api.vesper.finance
+  tags:
+  - Smart Contracts
+  - Web3
+  - ERC20
+  - DeFi
+  properties:
+  - type: Documentation
+    url: https://docs.vesper.finance/vesper-developers/vesper-contracts-api-reference
+  - type: GitHubRepository
+    url: https://github.com/vesperfi/vesper-contracts
+  contact:
+  - FN: Vesper Finance
+    url: https://vesper.finance/
+- name: Vesper Subgraph API
+  description: GraphQL subgraph for querying Vesper Finance on-chain events, pool
+    history, strategy performance, and token metrics via The Graph protocol.
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://github.com/vesperfi/vesper-subgraph
+  baseURL: https://api.thegraph.com/subgraphs/name/vesperfi
+  tags:
+  - GraphQL
+  - Subgraph
+  - The Graph
+  - Historical Data
+  properties:
+  - type: Documentation
+    url: https://github.com/vesperfi/vesper-subgraph
+  - type: GitHubRepository
+    url: https://github.com/vesperfi/vesper-subgraph
+  - url: graphql/vesper-graphql.md
+    type: GraphQL
+  contact:
+  - FN: Vesper Finance
+    url: https://vesper.finance/
+common:
+- type: Website
+  url: https://vesper.finance/
+- type: Documentation
+  url: https://docs.vesper.finance/
+- type: GitHubOrganization
+  url: https://github.com/vesperfi
+- type: JavaScriptLibrary
+  url: https://github.com/vesperfi/lib-js
+- type: Blog
+  url: https://medium.com/vesperfinance
+- type: Discord
+  url: https://discord.gg/vesperfinance
+- type: Twitter
+  url: https://twitter.com/VesperFi
+- type: PoolMetadata
+  url: https://github.com/vesperfi/metadata
 maintainers:
-  - FN: API Evangelist
-    url: https://apievangelist.com
-    email: info@apievangelist.com
+- FN: API Evangelist
+  url: https://apievangelist.com
+  email: info@apievangelist.com
