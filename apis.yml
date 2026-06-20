@@ -4,7 +4,7 @@ description: Vesper Finance is a DeFi yield aggregator that enables users to dep
   across decentralized finance protocols. The platform provides REST APIs for querying
   pool performance metrics, APY data, strategy information, VSP token statistics,
   and historical value-locked data across Ethereum, Polygon, Avalanche, and Optimism.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/apis.yml
 created: '2026-06-14'
 modified: '2026-06-14'
@@ -25,7 +25,7 @@ apis:
   description: REST API for querying Vesper Finance pool data, APY metrics, VSP token
     statistics, historical value-locked snapshots, and strategy information across
     all supported chains.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
   baseURL: https://api.vesper.finance
   tags:
@@ -55,7 +55,7 @@ apis:
   description: Smart contract interface reference for Vesper pools, strategies, PoolAccountant,
     PoolRewards, and related on-chain components enabling direct DeFi integration
     via Web3.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://docs.vesper.finance/vesper-developers/vesper-contracts-api-reference
   baseURL: https://api.vesper.finance
   tags:
@@ -74,7 +74,7 @@ apis:
 - name: Vesper Subgraph API
   description: GraphQL subgraph for querying Vesper Finance on-chain events, pool
     history, strategy performance, and token metrics via The Graph protocol.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://github.com/vesperfi/vesper-subgraph
   baseURL: https://api.thegraph.com/subgraphs/name/vesperfi
   tags:
