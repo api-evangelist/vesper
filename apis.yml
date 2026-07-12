@@ -93,6 +93,8 @@ apis:
   - FN: Vesper Finance
     url: https://vesper.finance/
 common:
+- type: DomainSecurity
+  url: security/vesper-domain-security.yml
 - type: Website
   url: https://vesper.finance/
 - type: Documentation
