@@ -1,0 +1,62 @@
+openapi: 3.0.3
+info:
+  title: Vesper Finance Pools TVL API
+  description: 'REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Vesper Finance
+    url: https://vesper.finance
+  license:
+    name: MIT
+    url: https://github.com/vesperfi/doc/blob/main/LICENSE
+servers:
+- url: https://api.vesper.finance
+  description: Vesper Finance Production API
+tags:
+- name: TVL
+  description: Total value locked metrics
+paths:
+  /values-locked:
+    get:
+      summary: Get values locked history
+      description: 'Obtains deposit asset values locked across all pools from the last month, returned as historical snapshots indexed by block number and timestamp.
+
+        '
+      operationId: getValuesLocked
+      tags:
+      - TVL
+      responses:
+        '200':
+          description: Array of historical value-locked snapshots
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ValueLocked'
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    ValueLocked:
+      type: object
+      description: Historical total value locked snapshot
+      properties:
+        blockNumber:
+          type: integer
+          description: Block number of the snapshot
+          example: 17500000
+        timestamp:
+          type: integer
+          description: Unix timestamp
+          example: 1686700000
+        values:
+          type: object
+          description: Map of pool address to locked value
+          additionalProperties:
+            type: string
+externalDocs:
+  description: Vesper Developer Documentation
+  url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide

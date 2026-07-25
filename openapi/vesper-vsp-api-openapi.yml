@@ -1,0 +1,72 @@
+openapi: 3.0.3
+info:
+  title: Vesper Finance Pools VSP API
+  description: 'REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Vesper Finance
+    url: https://vesper.finance
+  license:
+    name: MIT
+    url: https://github.com/vesperfi/doc/blob/main/LICENSE
+servers:
+- url: https://api.vesper.finance
+  description: Vesper Finance Production API
+tags:
+- name: VSP
+  description: VSP token statistics and staking data
+paths:
+  /vsp-stats:
+    get:
+      summary: Get VSP token statistics
+      description: 'Provides VSP token market statistics including current price, 1-hour price change, total and circulating supply, market capitalization, and distribution totals for overall and 30-day periods.
+
+        '
+      operationId: getVspStats
+      tags:
+      - VSP
+      responses:
+        '200':
+          description: VSP token statistics object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VspStats'
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    VspStats:
+      type: object
+      description: VSP token market statistics
+      properties:
+        price:
+          type: number
+          description: Current VSP token price in USD
+          example: 2.41
+        priceChange1h:
+          type: number
+          description: Price change over the past 1 hour as a percentage
+          example: -0.32
+        totalSupply:
+          type: string
+          description: Total VSP token supply
+          example: '10000000000000000000000000'
+        circulatingSupply:
+          type: string
+          description: Circulating VSP supply
+        marketCap:
+          type: number
+          description: Market capitalization in USD
+          example: 24100000
+        distributionTotal:
+          type: string
+          description: Total VSP distributed to date
+        distribution30d:
+          type: string
+          description: VSP distributed in the past 30 days
+externalDocs:
+  description: Vesper Developer Documentation
+  url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide

@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: Vesper Finance Pools Rates API
+  description: 'REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Vesper Finance
+    url: https://vesper.finance
+  license:
+    name: MIT
+    url: https://github.com/vesperfi/doc/blob/main/LICENSE
+servers:
+- url: https://api.vesper.finance
+  description: Vesper Finance Production API
+tags:
+- name: Rates
+  description: APY, APR, and lending rate data
+paths:
+  /loan-rates:
+    get:
+      summary: Get loan rates (APY/APR)
+      description: 'Fetches APY and APR data calculated over the past 24 hours for all Vesper pools, along with token symbols.
+
+        '
+      operationId: getLoanRates
+      tags:
+      - Rates
+      responses:
+        '200':
+          description: Object containing array of lending rates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoanRatesResponse'
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    LoanRatesResponse:
+      type: object
+      properties:
+        lendRates:
+          type: array
+          items:
+            type: object
+            properties:
+              apy:
+                type: number
+                description: Annual percentage yield (24-hour)
+                example: 4.72
+              apr:
+                type: number
+                description: Annual percentage rate (24-hour)
+                example: 4.62
+              symbol:
+                type: string
+                description: Token symbol for the pool asset
+                example: DAI
+externalDocs:
+  description: Vesper Developer Documentation
+  url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
