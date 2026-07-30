@@ -4,7 +4,19 @@ description: Vesper Finance is a DeFi yield aggregator that enables users to dep
   across decentralized finance protocols. The platform provides REST APIs for querying
   pool performance metrics, APY data, strategy information, VSP token statistics,
   and historical value-locked data across Ethereum, Polygon, Avalanche, and Optimism.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: open
+  trial: false
+  try_now: true
+  public: true
+  label: Free · Open access
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/vesper.png
 url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/apis.yml
 created: '2026-06-14'
 modified: '2026-06-14'
@@ -21,40 +33,10 @@ tags:
 - Avalanche
 - Optimism
 apis:
-- name: Vesper Finance API
-  description: REST API for querying Vesper Finance pool data, APY metrics, VSP token
-    statistics, historical value-locked snapshots, and strategy information across
-    all supported chains.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
-  baseURL: https://api.vesper.finance
-  tags:
-  - DeFi
-  - Yield
-  - Pools
-  - APY
-  - VSP
-  properties:
-  - type: Documentation
-    url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/openapi.yml
-  - type: GitHubRepository
-    url: https://github.com/vesperfi/doc
-  - type: Plans
-    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/plans/plans.yml
-  - type: RateLimits
-    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/rate-limits/rate-limits.yml
-  - type: FinOps
-    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
-  contact:
-  - FN: Vesper Finance
-    url: https://vesper.finance/
-    email: ''
 - name: Vesper Contracts API Reference
-  description: Smart contract interface reference for Vesper pools, strategies, PoolAccountant,
-    PoolRewards, and related on-chain components enabling direct DeFi integration
-    via Web3.
+  description: >-
+    Smart contract interface reference for Vesper pools, strategies, PoolAccountant, PoolRewards, and
+    related on-chain components enabling direct DeFi integration via Web3.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://docs.vesper.finance/vesper-developers/vesper-contracts-api-reference
   baseURL: https://api.vesper.finance
@@ -72,8 +54,9 @@ apis:
   - FN: Vesper Finance
     url: https://vesper.finance/
 - name: Vesper Subgraph API
-  description: GraphQL subgraph for querying Vesper Finance on-chain events, pool
-    history, strategy performance, and token metrics via The Graph protocol.
+  description: >-
+    GraphQL subgraph for querying Vesper Finance on-chain events, pool history, strategy performance,
+    and token metrics via The Graph protocol.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://github.com/vesperfi/vesper-subgraph
   baseURL: https://api.thegraph.com/subgraphs/name/vesperfi
@@ -92,6 +75,94 @@ apis:
   contact:
   - FN: Vesper Finance
     url: https://vesper.finance/
+- aid: vesper:vesper-pools-api
+  name: Vesper Finance Pools API
+  description: Vesper Grow Pool data and metadata
+  humanURL: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  baseURL: https://api.vesper.finance
+  tags:
+  - Pools
+  properties:
+  - type: OpenAPI
+    url: openapi/vesper-pools-api-openapi.yml
+  - type: Documentation
+    url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  - type: GitHubRepository
+    url: https://github.com/vesperfi/doc
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
+- aid: vesper:vesper-rates-api
+  name: Vesper Finance Rates API
+  description: APY, APR, and lending rate data
+  humanURL: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  baseURL: https://api.vesper.finance
+  tags:
+  - Rates
+  properties:
+  - type: OpenAPI
+    url: openapi/vesper-rates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  - type: GitHubRepository
+    url: https://github.com/vesperfi/doc
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
+- aid: vesper:vesper-tvl-api
+  name: Vesper Finance TVL API
+  description: Total value locked metrics
+  humanURL: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  baseURL: https://api.vesper.finance
+  tags:
+  - TVL
+  properties:
+  - type: OpenAPI
+    url: openapi/vesper-tvl-api-openapi.yml
+  - type: Documentation
+    url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  - type: GitHubRepository
+    url: https://github.com/vesperfi/doc
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
+- aid: vesper:vesper-vsp-api
+  name: Vesper Finance VSP API
+  description: VSP token statistics and staking data
+  humanURL: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  baseURL: https://api.vesper.finance
+  tags:
+  - VSP
+  properties:
+  - type: OpenAPI
+    url: openapi/vesper-vsp-api-openapi.yml
+  - type: Documentation
+    url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+  - type: GitHubRepository
+    url: https://github.com/vesperfi/doc
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
 common:
 - type: AgenticAccess
   url: agentic-access/vesper-agentic-access.yml
