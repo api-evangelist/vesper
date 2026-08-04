@@ -1,0 +1,389 @@
+openapi: 3.0.3
+info:
+  title: Vesper Finance API
+  description: >
+    REST API for Vesper Finance, a DeFi yield aggregator. Provides public access
+    to pool performance data, APY metrics, VSP token statistics, historical value-locked
+    snapshots, and per-pool data points. No authentication is required.
+  version: 1.0.0
+  contact:
+    name: Vesper Finance
+    url: https://vesper.finance
+  license:
+    name: MIT
+    url: https://github.com/vesperfi/doc/blob/main/LICENSE
+externalDocs:
+  description: Vesper Developer Documentation
+  url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
+servers:
+  - url: https://api.vesper.finance
+    description: Vesper Finance Production API
+tags:
+  - name: Pools
+    description: Vesper Grow Pool data and metadata
+  - name: Rates
+    description: APY, APR, and lending rate data
+  - name: VSP
+    description: VSP token statistics and staking data
+  - name: TVL
+    description: Total value locked metrics
+paths:
+  /dashboard:
+    get:
+      summary: Get pool dashboard data
+      description: >
+        Retrieves comprehensive pool information including contract addresses,
+        strategies, pool rewards, operational status, and stage classification
+        for all Vesper pools.
+      operationId: getDashboard
+      tags:
+        - Pools
+      responses:
+        '200':
+          description: Array of pool dashboard objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PoolDashboard'
+        '500':
+          description: Internal server error
+  /loan-rates:
+    get:
+      summary: Get loan rates (APY/APR)
+      description: >
+        Fetches APY and APR data calculated over the past 24 hours for all
+        Vesper pools, along with token symbols.
+      operationId: getLoanRates
+      tags:
+        - Rates
+      responses:
+        '200':
+          description: Object containing array of lending rates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoanRatesResponse'
+        '500':
+          description: Internal server error
+  /pools:
+    get:
+      summary: Get all pools
+      description: >
+        Delivers detailed pool data including asset information, risk levels,
+        earning rates, fee structure, token values, supply metrics, and
+        historical rate data for 1, 2, 7, and 30-day periods.
+      operationId: getPools
+      tags:
+        - Pools
+      responses:
+        '200':
+          description: Array of pool detail objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pool'
+        '500':
+          description: Internal server error
+  /pools/{address}/data-points:
+    get:
+      summary: Get historical data points for a pool
+      description: >
+        Retrieves historical data point snapshots from the specified pool
+        contract within the last week, including block numbers, timestamps,
+        interest metrics, pool supply, and total value.
+      operationId: getPoolDataPoints
+      tags:
+        - Pools
+      parameters:
+        - name: address
+          in: path
+          required: true
+          description: The pool contract address (checksummed Ethereum address)
+          schema:
+            type: string
+            pattern: '^0x[a-fA-F0-9]{40}$'
+            example: '0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d'
+      responses:
+        '200':
+          description: Array of historical data point objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataPoint'
+        '404':
+          description: Pool not found
+        '500':
+          description: Internal server error
+  /values-locked:
+    get:
+      summary: Get values locked history
+      description: >
+        Obtains deposit asset values locked across all pools from the last
+        month, returned as historical snapshots indexed by block number
+        and timestamp.
+      operationId: getValuesLocked
+      tags:
+        - TVL
+      responses:
+        '200':
+          description: Array of historical value-locked snapshots
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ValueLocked'
+        '500':
+          description: Internal server error
+  /vsp-stats:
+    get:
+      summary: Get VSP token statistics
+      description: >
+        Provides VSP token market statistics including current price, 1-hour
+        price change, total and circulating supply, market capitalization,
+        and distribution totals for overall and 30-day periods.
+      operationId: getVspStats
+      tags:
+        - VSP
+      responses:
+        '200':
+          description: VSP token statistics object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VspStats'
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    PoolDashboard:
+      type: object
+      description: Pool dashboard object with contract, strategy, and reward details
+      properties:
+        name:
+          type: string
+          description: Human-readable pool name
+          example: vaDAI
+        address:
+          type: string
+          description: Pool contract address
+          example: '0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d'
+        tokens:
+          type: array
+          description: Token contract addresses associated with the pool
+          items:
+            type: string
+        holderCount:
+          type: integer
+          description: Number of unique holders of pool tokens
+          example: 1450
+        strategies:
+          type: array
+          description: List of strategy contract objects
+          items:
+            type: object
+            properties:
+              address:
+                type: string
+                description: Strategy contract address
+              tokens:
+                type: array
+                items:
+                  type: string
+              makerVault:
+                type: object
+                description: MakerDAO vault details if applicable
+        poolRewards:
+          type: object
+          description: Pool reward contract and token list
+          properties:
+            address:
+              type: string
+            tokens:
+              type: array
+              items:
+                type: string
+        status:
+          type: string
+          description: Operational status of the pool
+          enum:
+            - operative
+            - paused
+          example: operative
+        stage:
+          type: string
+          description: Lifecycle stage of the pool
+          enum:
+            - alpha
+            - beta
+            - prod
+            - retired
+          example: prod
+    LoanRatesResponse:
+      type: object
+      properties:
+        lendRates:
+          type: array
+          items:
+            type: object
+            properties:
+              apy:
+                type: number
+                description: Annual percentage yield (24-hour)
+                example: 4.72
+              apr:
+                type: number
+                description: Annual percentage rate (24-hour)
+                example: 4.62
+              symbol:
+                type: string
+                description: Token symbol for the pool asset
+                example: DAI
+    Pool:
+      type: object
+      description: Detailed pool object with full metadata, fees, and earning data
+      properties:
+        name:
+          type: string
+          example: vaDAI
+        address:
+          type: string
+          example: '0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d'
+        decimals:
+          type: integer
+          example: 18
+        stage:
+          type: string
+          enum:
+            - alpha
+            - beta
+            - prod
+            - retired
+        asset:
+          type: object
+          properties:
+            symbol:
+              type: string
+              example: DAI
+            address:
+              type: string
+            price:
+              type: number
+              example: 1.0
+            decimals:
+              type: integer
+              example: 18
+        riskLevel:
+          type: integer
+          description: Risk score (1 = lowest, 5 = highest)
+          example: 2
+        holderCount:
+          type: integer
+          example: 1450
+        interestFee:
+          type: number
+          description: Performance fee percentage
+          example: 2.0
+        withdrawalFee:
+          type: number
+          description: Withdrawal fee percentage
+          example: 0.0
+        lockPeriod:
+          type: integer
+          description: Token lock period in seconds
+          example: 0
+        tokenValue:
+          type: number
+          description: Current value per pool token
+          example: 1.0421
+        totalSupply:
+          type: string
+          description: Total pool token supply (string to preserve precision)
+          example: '5000000000000000000000000'
+        earningRates:
+          type: object
+          properties:
+            day1:
+              type: number
+            day2:
+              type: number
+            day7:
+              type: number
+            day30:
+              type: number
+    DataPoint:
+      type: object
+      description: Historical data point snapshot for a pool
+      properties:
+        blockNumber:
+          type: integer
+          description: Ethereum block number of the snapshot
+          example: 17500000
+        timestamp:
+          type: integer
+          description: Unix timestamp of the snapshot
+          example: 1686700000
+        interest:
+          type: string
+          description: Accrued interest value
+        interestFee:
+          type: string
+          description: Interest fee taken at this snapshot
+        poolSupply:
+          type: string
+          description: Pool token total supply at snapshot
+        totalValue:
+          type: string
+          description: Total asset value in the pool at snapshot
+    ValueLocked:
+      type: object
+      description: Historical total value locked snapshot
+      properties:
+        blockNumber:
+          type: integer
+          description: Block number of the snapshot
+          example: 17500000
+        timestamp:
+          type: integer
+          description: Unix timestamp
+          example: 1686700000
+        values:
+          type: object
+          description: Map of pool address to locked value
+          additionalProperties:
+            type: string
+    VspStats:
+      type: object
+      description: VSP token market statistics
+      properties:
+        price:
+          type: number
+          description: Current VSP token price in USD
+          example: 2.41
+        priceChange1h:
+          type: number
+          description: Price change over the past 1 hour as a percentage
+          example: -0.32
+        totalSupply:
+          type: string
+          description: Total VSP token supply
+          example: '10000000000000000000000000'
+        circulatingSupply:
+          type: string
+          description: Circulating VSP supply
+        marketCap:
+          type: number
+          description: Market capitalization in USD
+          example: 24100000
+        distributionTotal:
+          type: string
+          description: Total VSP distributed to date
+        distribution30d:
+          type: string
+          description: VSP distributed in the past 30 days

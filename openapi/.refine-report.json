@@ -1,0 +1,25 @@
+{
+  "provider": "vesper",
+  "sources": [
+    "vesper-pools-api-openapi.yml",
+    "vesper-rates-api-openapi.yml",
+    "vesper-tvl-api-openapi.yml",
+    "vesper-vsp-api-openapi.yml",
+    "openapi.yml"
+  ],
+  "outputs": [
+    "vesper-pools-api-openapi.yml",
+    "vesper-rates-api-openapi.yml",
+    "vesper-tvl-api-openapi.yml",
+    "vesper-vsp-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "discovered stray spec: openapi.yml"
+  ],
+  "skipped": []
+}
