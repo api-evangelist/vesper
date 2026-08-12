@@ -164,6 +164,9 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
 common:
+- type: License
+  name: MIT
+  url: https://github.com/vesperfi/vesper-contracts/blob/main/LICENSE
 - type: AgenticAccess
   url: agentic-access/vesper-agentic-access.yml
 - type: DomainSecurity
