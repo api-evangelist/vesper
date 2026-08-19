@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vesper Finance Pools VSP API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VSP",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get VSP token statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vesper.finance/vsp-stats"
+          },
+          "docs": "Provides VSP token market statistics including current price, 1-hour price change, total and circulating supply, market capitalization, and distribution totals for overall and 30-day periods.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

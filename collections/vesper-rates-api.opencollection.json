@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vesper Finance Pools Rates API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get loan rates (APY/APR)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vesper.finance/loan-rates"
+          },
+          "docs": "Fetches APY and APR data calculated over the past 24 hours for all Vesper pools, along with token symbols.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vesper Finance Pools API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get pool dashboard data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vesper.finance/dashboard"
+          },
+          "docs": "Retrieves comprehensive pool information including contract addresses, strategies, pool rewards, operational status, and stage classification for all Vesper pools.\n"
+        },
+        {
+          "info": {
+            "name": "Get all pools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vesper.finance/pools"
+          },
+          "docs": "Delivers detailed pool data including asset information, risk levels, earning rates, fee structure, token values, supply metrics, and historical rate data for 1, 2, 7, and 30-day periods.\n"
+        },
+        {
+          "info": {
+            "name": "Get historical data points for a pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vesper.finance/pools/:address/data-points",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "path",
+                "description": "The pool contract address (checksummed Ethereum address)"
+              }
+            ]
+          },
+          "docs": "Retrieves historical data point snapshots from the specified pool contract within the last week, including block numbers, timestamps, interest metrics, pool supply, and total value.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

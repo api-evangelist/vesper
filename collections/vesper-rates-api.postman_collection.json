@@ -1,0 +1,131 @@
+{
+  "item": [
+    {
+      "id": "7895ef6e-acf5-403a-b414-f7d6729cd6bb",
+      "name": "Rates",
+      "description": {
+        "content": "APY, APR, and lending rate data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "34bcb026-e36f-43cf-a58d-1f245949643b",
+          "name": "Get loan rates (APY/APR)",
+          "request": {
+            "name": "Get loan rates (APY/APR)",
+            "description": {
+              "content": "Fetches APY and APR data calculated over the past 24 hours for all Vesper pools, along with token symbols.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "loan-rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b2958b2-3e56-47de-8c97-fba2e2fcb847",
+              "name": "Object containing array of lending rates",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "loan-rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lendRates\": [\n    {\n      \"apy\": 4.72,\n      \"apr\": 4.62,\n      \"symbol\": \"DAI\"\n    },\n    {\n      \"apy\": 4.72,\n      \"apr\": 4.62,\n      \"symbol\": \"DAI\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba7fe7ed-cd50-40c6-97aa-a8d73d174bce",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "loan-rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vesper.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6697113f-c616-49e8-b1c0-2e54279d4405",
+    "name": "Vesper Finance Pools Rates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.\n\n\nContact Support:\n Name: Vesper Finance",
+      "type": "text/plain"
+    }
+  }
+}

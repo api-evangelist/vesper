@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vesper Finance Pools TVL API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TVL",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get values locked history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vesper.finance/values-locked"
+          },
+          "docs": "Obtains deposit asset values locked across all pools from the last month, returned as historical snapshots indexed by block number and timestamp.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

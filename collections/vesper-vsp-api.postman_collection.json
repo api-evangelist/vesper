@@ -1,0 +1,131 @@
+{
+  "item": [
+    {
+      "id": "5b77ce6e-0869-4fbd-be2b-731eb2f46975",
+      "name": "VSP",
+      "description": {
+        "content": "VSP token statistics and staking data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c5f2c1bc-8c72-4d9f-b429-bfadbc094a03",
+          "name": "Get VSP token statistics",
+          "request": {
+            "name": "Get VSP token statistics",
+            "description": {
+              "content": "Provides VSP token market statistics including current price, 1-hour price change, total and circulating supply, market capitalization, and distribution totals for overall and 30-day periods.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vsp-stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3ad01389-8e44-43e8-9789-5fd4fc99bf55",
+              "name": "VSP token statistics object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vsp-stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"price\": 2.41,\n  \"priceChange1h\": -0.32,\n  \"totalSupply\": \"10000000000000000000000000\",\n  \"circulatingSupply\": \"string\",\n  \"marketCap\": 24100000,\n  \"distributionTotal\": \"string\",\n  \"distribution30d\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f39cefcd-6f22-4d79-b60a-d922ec4678da",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vsp-stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vesper.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5e259650-a49b-4f8f-b834-2e04d7ff32a3",
+    "name": "Vesper Finance Pools VSP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.\n\n\nContact Support:\n Name: Vesper Finance",
+      "type": "text/plain"
+    }
+  }
+}

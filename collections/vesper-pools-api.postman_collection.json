@@ -1,0 +1,398 @@
+{
+  "item": [
+    {
+      "id": "c55a7a56-f7df-4c44-a34a-ebdcbcea4a84",
+      "name": "Pools",
+      "description": {
+        "content": "Vesper Grow Pool data and metadata",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "12153cfc-0352-4f9a-bf60-cc6978dd9ba4",
+          "name": "Get pool dashboard data",
+          "request": {
+            "name": "Get pool dashboard data",
+            "description": {
+              "content": "Retrieves comprehensive pool information including contract addresses, strategies, pool rewards, operational status, and stage classification for all Vesper pools.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dashboard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "251afc47-1cc6-4306-81ad-7daff4ee0cf7",
+              "name": "Array of pool dashboard objects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dashboard"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"vaDAI\",\n    \"address\": \"0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d\",\n    \"tokens\": [\n      \"string\",\n      \"string\"\n    ],\n    \"holderCount\": 1450,\n    \"strategies\": [\n      {\n        \"address\": \"string\",\n        \"tokens\": [\n          \"string\",\n          \"string\"\n        ],\n        \"makerVault\": {}\n      },\n      {\n        \"address\": \"string\",\n        \"tokens\": [\n          \"string\",\n          \"string\"\n        ],\n        \"makerVault\": {}\n      }\n    ],\n    \"poolRewards\": {\n      \"address\": \"string\",\n      \"tokens\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"status\": \"operative\",\n    \"stage\": \"prod\"\n  },\n  {\n    \"name\": \"vaDAI\",\n    \"address\": \"0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d\",\n    \"tokens\": [\n      \"string\",\n      \"string\"\n    ],\n    \"holderCount\": 1450,\n    \"strategies\": [\n      {\n        \"address\": \"string\",\n        \"tokens\": [\n          \"string\",\n          \"string\"\n        ],\n        \"makerVault\": {}\n      },\n      {\n        \"address\": \"string\",\n        \"tokens\": [\n          \"string\",\n          \"string\"\n        ],\n        \"makerVault\": {}\n      }\n    ],\n    \"poolRewards\": {\n      \"address\": \"string\",\n      \"tokens\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"status\": \"operative\",\n    \"stage\": \"prod\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b6ddb48-3f0f-4a56-afa5-5da713575b2b",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dashboard"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1dbd478-4c22-49b0-8f58-4d8c36c8c3bb",
+          "name": "Get all pools",
+          "request": {
+            "name": "Get all pools",
+            "description": {
+              "content": "Delivers detailed pool data including asset information, risk levels, earning rates, fee structure, token values, supply metrics, and historical rate data for 1, 2, 7, and 30-day periods.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1935f8a6-49c7-4d25-917a-f79a41568638",
+              "name": "Array of pool detail objects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"vaDAI\",\n    \"address\": \"0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d\",\n    \"decimals\": 18,\n    \"stage\": \"alpha\",\n    \"asset\": {\n      \"symbol\": \"DAI\",\n      \"address\": \"string\",\n      \"price\": 1,\n      \"decimals\": 18\n    },\n    \"riskLevel\": 2,\n    \"holderCount\": 1450,\n    \"interestFee\": 2,\n    \"withdrawalFee\": 0,\n    \"lockPeriod\": 0,\n    \"tokenValue\": 1.0421,\n    \"totalSupply\": \"5000000000000000000000000\",\n    \"earningRates\": {\n      \"day1\": 8117.4696977457925,\n      \"day2\": 6474.904980167989,\n      \"day7\": 9272.699695235633,\n      \"day30\": 4687.242109094898\n    }\n  },\n  {\n    \"name\": \"vaDAI\",\n    \"address\": \"0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d\",\n    \"decimals\": 18,\n    \"stage\": \"alpha\",\n    \"asset\": {\n      \"symbol\": \"DAI\",\n      \"address\": \"string\",\n      \"price\": 1,\n      \"decimals\": 18\n    },\n    \"riskLevel\": 2,\n    \"holderCount\": 1450,\n    \"interestFee\": 2,\n    \"withdrawalFee\": 0,\n    \"lockPeriod\": 0,\n    \"tokenValue\": 1.0421,\n    \"totalSupply\": \"5000000000000000000000000\",\n    \"earningRates\": {\n      \"day1\": 578.9336871008566,\n      \"day2\": 297.666135790573,\n      \"day7\": 5548.94746476032,\n      \"day30\": 2619.3438508166255\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "000ad5b6-5889-4646-8c7c-8d8a9917fb8d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "124d756f-335a-4719-b2cd-bb23f4b34010",
+          "name": "Get historical data points for a pool",
+          "request": {
+            "name": "Get historical data points for a pool",
+            "description": {
+              "content": "Retrieves historical data point snapshots from the specified pool contract within the last week, including block numbers, timestamps, interest metrics, pool supply, and total value.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pools",
+                ":address",
+                "data-points"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "address",
+                  "description": "(Required) The pool contract address (checksummed Ethereum address)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bcfdee66-5a9c-4542-bb0b-c7cb0af5259d",
+              "name": "Array of historical data point objects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    ":address",
+                    "data-points"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) The pool contract address (checksummed Ethereum address)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"blockNumber\": 17500000,\n    \"timestamp\": 1686700000,\n    \"interest\": \"string\",\n    \"interestFee\": \"string\",\n    \"poolSupply\": \"string\",\n    \"totalValue\": \"string\"\n  },\n  {\n    \"blockNumber\": 17500000,\n    \"timestamp\": 1686700000,\n    \"interest\": \"string\",\n    \"interestFee\": \"string\",\n    \"poolSupply\": \"string\",\n    \"totalValue\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "232affe9-6aee-44b4-aa5b-1121818a5e0a",
+              "name": "Pool not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    ":address",
+                    "data-points"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) The pool contract address (checksummed Ethereum address)"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0d1e4ec7-0bc5-488f-8467-2c12ac8a4345",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pools",
+                    ":address",
+                    "data-points"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) The pool contract address (checksummed Ethereum address)"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vesper.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3c879599-aef6-4e7e-99db-0a02f90cd76e",
+    "name": "Vesper Finance Pools API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.\n\n\nContact Support:\n Name: Vesper Finance",
+      "type": "text/plain"
+    }
+  }
+}
