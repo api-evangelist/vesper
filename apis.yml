@@ -43,6 +43,11 @@ apis:
   tags:
   - Smart Contracts
   - Web3
+  - ERC-20
+  - DeFi
+  tags_raw:
+  - Smart Contracts
+  - Web3
   - ERC20
   - DeFi
   properties:
