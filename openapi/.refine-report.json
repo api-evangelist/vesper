@@ -4,8 +4,7 @@
     "vesper-pools-api-openapi.yml",
     "vesper-rates-api-openapi.yml",
     "vesper-tvl-api-openapi.yml",
-    "vesper-vsp-api-openapi.yml",
-    "openapi.yml"
+    "vesper-vsp-api-openapi.yml"
   ],
   "outputs": [
     "vesper-pools-api-openapi.yml",
@@ -13,13 +12,15 @@
     "vesper-tvl-api-openapi.yml",
     "vesper-vsp-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi.yml"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "discovered stray spec: openapi.yml"
+    "vesper-pools-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "vesper-rates-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "vesper-tvl-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "vesper-vsp-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
   ],
   "skipped": []
 }

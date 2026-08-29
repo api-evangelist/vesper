@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Vesper Finance Pools Rates API
   description: 'REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.
