@@ -4,6 +4,20 @@ description: Vesper Finance is a DeFi yield aggregator that enables users to dep
   across decentralized finance protocols. The platform provides REST APIs for querying
   pool performance metrics, APY data, strategy information, VSP token statistics,
   and historical value-locked data across Ethereum, Polygon, Avalanche, and Optimism.
+deliveryModel:
+  model: open-core
+  license: MIT
+  open_source: true
+  commercial: true
+  callable_host: true
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: open
@@ -169,6 +183,8 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/vesper/refs/heads/main/finops/finops.yml
 common:
+- type: IssueTracker
+  url: https://github.com/vesperfi/vesper-contracts/issues
 - type: License
   name: MIT
   url: https://github.com/vesperfi/vesper-contracts/blob/main/LICENSE
