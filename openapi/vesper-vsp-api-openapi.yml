@@ -1,9 +1,7 @@
 openapi: 3.2.0
 info:
-  title: Vesper Finance Pools VSP API
-  description: 'REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.
-
-    '
+  title: Vesper Finance VSP API
+  description: REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.
   version: 1.0.0
   contact:
     name: Vesper Finance
@@ -21,9 +19,7 @@ paths:
   /vsp-stats:
     get:
       summary: Get VSP token statistics
-      description: 'Provides VSP token market statistics including current price, 1-hour price change, total and circulating supply, market capitalization, and distribution totals for overall and 30-day periods.
-
-        '
+      description: Provides VSP token market statistics including current price, 1-hour price change, total and circulating supply, market capitalization, and distribution totals for overall and 30-day periods.
       operationId: getVspStats
       tags:
       - VSP

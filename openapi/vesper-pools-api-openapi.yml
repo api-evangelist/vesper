@@ -1,9 +1,7 @@
 openapi: 3.2.0
 info:
   title: Vesper Finance Pools API
-  description: 'REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.
-
-    '
+  description: REST API for Vesper Finance, a DeFi yield aggregator. Provides public access to pool performance data, APY metrics, VSP token statistics, historical value-locked snapshots, and per-pool data points. No authentication is required.
   version: 1.0.0
   contact:
     name: Vesper Finance
@@ -21,9 +19,7 @@ paths:
   /dashboard:
     get:
       summary: Get pool dashboard data
-      description: 'Retrieves comprehensive pool information including contract addresses, strategies, pool rewards, operational status, and stage classification for all Vesper pools.
-
-        '
+      description: Retrieves comprehensive pool information including contract addresses, strategies, pool rewards, operational status, and stage classification for all Vesper pools.
       operationId: getDashboard
       tags:
       - Pools
@@ -41,9 +37,7 @@ paths:
   /pools:
     get:
       summary: Get all pools
-      description: 'Delivers detailed pool data including asset information, risk levels, earning rates, fee structure, token values, supply metrics, and historical rate data for 1, 2, 7, and 30-day periods.
-
-        '
+      description: Delivers detailed pool data including asset information, risk levels, earning rates, fee structure, token values, supply metrics, and historical rate data for 1, 2, 7, and 30-day periods.
       operationId: getPools
       tags:
       - Pools
@@ -61,9 +55,7 @@ paths:
   /pools/{address}/data-points:
     get:
       summary: Get historical data points for a pool
-      description: 'Retrieves historical data point snapshots from the specified pool contract within the last week, including block numbers, timestamps, interest metrics, pool supply, and total value.
-
-        '
+      description: Retrieves historical data point snapshots from the specified pool contract within the last week, including block numbers, timestamps, interest metrics, pool supply, and total value.
       operationId: getPoolDataPoints
       tags:
       - Pools
@@ -91,30 +83,6 @@ paths:
           description: Internal server error
 components:
   schemas:
-    DataPoint:
-      type: object
-      description: Historical data point snapshot for a pool
-      properties:
-        blockNumber:
-          type: integer
-          description: Ethereum block number of the snapshot
-          example: 17500000
-        timestamp:
-          type: integer
-          description: Unix timestamp of the snapshot
-          example: 1686700000
-        interest:
-          type: string
-          description: Accrued interest value
-        interestFee:
-          type: string
-          description: Interest fee taken at this snapshot
-        poolSupply:
-          type: string
-          description: Pool token total supply at snapshot
-        totalValue:
-          type: string
-          description: Total asset value in the pool at snapshot
     PoolDashboard:
       type: object
       description: Pool dashboard object with contract, strategy, and reward details
@@ -178,6 +146,30 @@ components:
           - prod
           - retired
           example: prod
+    DataPoint:
+      type: object
+      description: Historical data point snapshot for a pool
+      properties:
+        blockNumber:
+          type: integer
+          description: Ethereum block number of the snapshot
+          example: 17500000
+        timestamp:
+          type: integer
+          description: Unix timestamp of the snapshot
+          example: 1686700000
+        interest:
+          type: string
+          description: Accrued interest value
+        interestFee:
+          type: string
+          description: Interest fee taken at this snapshot
+        poolSupply:
+          type: string
+          description: Pool token total supply at snapshot
+        totalValue:
+          type: string
+          description: Total asset value in the pool at snapshot
     Pool:
       type: object
       description: Detailed pool object with full metadata, fees, and earning data

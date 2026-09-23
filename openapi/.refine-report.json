@@ -1,10 +1,7 @@
 {
   "provider": "vesper",
   "sources": [
-    "vesper-pools-api-openapi.yml",
-    "vesper-rates-api-openapi.yml",
-    "vesper-tvl-api-openapi.yml",
-    "vesper-vsp-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "vesper-pools-api-openapi.yml",
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "vesper-pools-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "vesper-rates-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "vesper-tvl-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "vesper-vsp-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "vesper-pools-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vesper-rates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vesper-tvl-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vesper-vsp-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
