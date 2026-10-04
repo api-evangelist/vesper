@@ -83,6 +83,93 @@ paths:
           description: Internal server error
 components:
   schemas:
+    PoolDashboard:
+      type: object
+      description: Pool dashboard object with contract, strategy, and reward details
+      properties:
+        name:
+          type: string
+          description: Human-readable pool name
+          example: vaDAI
+        address:
+          type: string
+          description: Pool contract address
+          example: '0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d'
+        tokens:
+          type: array
+          description: Token contract addresses associated with the pool
+          items:
+            type: string
+        holderCount:
+          type: integer
+          description: Number of unique holders of pool tokens
+          example: 1450
+        strategies:
+          type: array
+          description: List of strategy contract objects
+          items:
+            type: object
+            properties:
+              address:
+                type: string
+                description: Strategy contract address
+              tokens:
+                type: array
+                items:
+                  type: string
+              makerVault:
+                type: object
+                description: MakerDAO vault details if applicable
+        poolRewards:
+          type: object
+          description: Pool reward contract and token list
+          properties:
+            address:
+              type: string
+            tokens:
+              type: array
+              items:
+                type: string
+        status:
+          type: string
+          description: Operational status of the pool
+          enum:
+          - operative
+          - paused
+          example: operative
+        stage:
+          type: string
+          description: Lifecycle stage of the pool
+          enum:
+          - alpha
+          - beta
+          - prod
+          - retired
+          example: prod
+    DataPoint:
+      type: object
+      description: Historical data point snapshot for a pool
+      properties:
+        blockNumber:
+          type: integer
+          description: Ethereum block number of the snapshot
+          example: 17500000
+        timestamp:
+          type: integer
+          description: Unix timestamp of the snapshot
+          example: 1686700000
+        interest:
+          type: string
+          description: Accrued interest value
+        interestFee:
+          type: string
+          description: Interest fee taken at this snapshot
+        poolSupply:
+          type: string
+          description: Pool token total supply at snapshot
+        totalValue:
+          type: string
+          description: Total asset value in the pool at snapshot
     Pool:
       type: object
       description: Detailed pool object with full metadata, fees, and earning data
@@ -155,93 +242,6 @@ components:
               type: number
             day30:
               type: number
-    DataPoint:
-      type: object
-      description: Historical data point snapshot for a pool
-      properties:
-        blockNumber:
-          type: integer
-          description: Ethereum block number of the snapshot
-          example: 17500000
-        timestamp:
-          type: integer
-          description: Unix timestamp of the snapshot
-          example: 1686700000
-        interest:
-          type: string
-          description: Accrued interest value
-        interestFee:
-          type: string
-          description: Interest fee taken at this snapshot
-        poolSupply:
-          type: string
-          description: Pool token total supply at snapshot
-        totalValue:
-          type: string
-          description: Total asset value in the pool at snapshot
-    PoolDashboard:
-      type: object
-      description: Pool dashboard object with contract, strategy, and reward details
-      properties:
-        name:
-          type: string
-          description: Human-readable pool name
-          example: vaDAI
-        address:
-          type: string
-          description: Pool contract address
-          example: '0x0C49066C0808Ee8c673553B7cbd99BCC9ABf113d'
-        tokens:
-          type: array
-          description: Token contract addresses associated with the pool
-          items:
-            type: string
-        holderCount:
-          type: integer
-          description: Number of unique holders of pool tokens
-          example: 1450
-        strategies:
-          type: array
-          description: List of strategy contract objects
-          items:
-            type: object
-            properties:
-              address:
-                type: string
-                description: Strategy contract address
-              tokens:
-                type: array
-                items:
-                  type: string
-              makerVault:
-                type: object
-                description: MakerDAO vault details if applicable
-        poolRewards:
-          type: object
-          description: Pool reward contract and token list
-          properties:
-            address:
-              type: string
-            tokens:
-              type: array
-              items:
-                type: string
-        status:
-          type: string
-          description: Operational status of the pool
-          enum:
-          - operative
-          - paused
-          example: operative
-        stage:
-          type: string
-          description: Lifecycle stage of the pool
-          enum:
-          - alpha
-          - beta
-          - prod
-          - retired
-          example: prod
 externalDocs:
   description: Vesper Developer Documentation
   url: https://docs.vesper.finance/vesper-developers/vesper-developers-guide
