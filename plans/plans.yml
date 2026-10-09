@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: Vesper Finance API Plans
 description: Vesper Finance provides open, public access to its REST API with no
   authentication requirements. The API is freely available for integration with DeFi
@@ -32,3 +36,18 @@ plans:
       - name: VSP Statistics
         description: Access to GET /vsp-stats for VSP token price, supply, market
           cap, and distribution data
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units:
+  - period
+  plans:
+  - name: Public Access
+    access: other
+    model: free
+    model_how: derived
+    units:
+    - period
+    periods: []
